@@ -29,9 +29,7 @@ export default function MainPanel() {
                   ) : msg.from === "bot" ? (
                     <>
                       <span className="text-xs lg:text-sm"><Typewriter text={msg.text}/></span>
-                      
                     </>
-                    
                   ) : (
                     msg.text
                   )}

@@ -21,8 +21,7 @@ export default function Sidebar({ isActive, setIsActive }: { isActive: string, s
       <div className="mt-10 pt-6 border-t border-violet-100 text-xs text-gray-500 flex flex-col items-center gap-1">
         <span className="font-semibold text-violet-700">Développé par</span>
         <span className="font-medium text-gray-700">Rojo Niaina</span>
-        <span className="text-gray-400">exemple.email@email.com</span>
-        <span className="text-gray-400">© 2024</span>
+        <span className="text-gray-400">© 2025</span>
       </div>
     </aside>
   );
