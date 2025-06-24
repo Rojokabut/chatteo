@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description: "Created by Rojo Niaina",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
