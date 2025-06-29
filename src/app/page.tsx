@@ -6,7 +6,7 @@ import logoChatteo from "@/assets/images/logoChatteo.png"
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-violet-100 via-white to-violet-50 font-sans">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-violet-100 via-white to-violet-50 font-sans px-3">
       <motion.div
         initial={{ opacity: 0, scale: 0.95, y: 40 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
