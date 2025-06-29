@@ -6,7 +6,6 @@ import { SendHorizonal, Square } from "lucide-react";
 type Message = { from: "user" | "bot"; text: string };
 
 export default function PromptInput({
-  messages,
   setMessages,
 }: {
   messages: Message[];
