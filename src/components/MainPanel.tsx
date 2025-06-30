@@ -3,7 +3,11 @@
 import React, { useState } from "react";
 import PromptInput from "./PrompInput";
 import Markdown from "react-markdown";
-import { RotateCcw } from "lucide-react";
+import { RotateCcw , Copy, Check} from "lucide-react";
+
+interface CopyButtonProps {
+  code: string
+}
 
 type Message = { from: "user" | "bot"; text: string; thinking?: boolean };
 
@@ -26,8 +30,18 @@ async function fetchBotResponse(prompt: string) {
   }
 }
 
-export default function MainPanel() {
+export default function MainPanel({ code }: CopyButtonProps) {
   const [messages, setMessages] = useState<Message[]>([]);
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+
+
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(code)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000) // Reset after 2 seconds
+  }
 
   // Fonction de régénération d'un message bot
   const regenerateBotMessage = async (botIdx: number) => {
@@ -101,6 +115,18 @@ export default function MainPanel() {
                     >
                       <RotateCcw stroke="gray" width={12} height={12}/>
                     </button>
+                    <button
+                      className="p-1 rounded hover:bg-violet-100"
+                      title="copier la réponse"
+                      onClick={() => {
+                        navigator.clipboard.writeText(msg.text);
+                        setCopiedIndex(idx);
+                        setTimeout(() => setCopiedIndex(null), 2000);
+                      }}
+                    >
+                      {copiedIndex === idx ? <Check stroke="gray" size={12} /> : <Copy stroke="gray" size={12} />}
+                    </button>
+
                   </div>
                 )}
               </li>
