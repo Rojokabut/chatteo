@@ -5,9 +5,7 @@ import PromptInput from "./PrompInput";
 import Markdown from "react-markdown";
 import { RotateCcw , Copy, Check} from "lucide-react";
 
-interface CopyButtonProps {
-  code: string
-}
+
 
 type Message = { from: "user" | "bot"; text: string; thinking?: boolean };
 
@@ -30,18 +28,10 @@ async function fetchBotResponse(prompt: string) {
   }
 }
 
-export default function MainPanel({ code }: CopyButtonProps) {
+export default function MainPanel() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
-
-  const [copied, setCopied] = useState(false)
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(code)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000) // Reset after 2 seconds
-  }
 
   // Fonction de régénération d'un message bot
   const regenerateBotMessage = async (botIdx: number) => {
