@@ -27,7 +27,7 @@ export default function About() {
         <span className="mt-4 text-lg font-bold text-violet-800">Rojo Niaina</span>
         <span className="text-sm text-gray-500">Développeur Fullstack</span>
         <div className="mt-3 flex lg:flex-col flex-row gap-2 mb-5">
-          <Link href="https://portfolio-rojoniaina.vercel.app/" className="flex space-x-2 items-center bg-violet-800 border border-violet-800 text-white px-4 py-2 rounded-xl hover:bg-white hover:text-violet-800 hover:border hover:border-gray-300 ">
+          <Link href="https://portfolio-rojoniaina.vercel.app/" target="_blank" className="flex space-x-2 items-center bg-violet-800 border border-violet-800 text-white px-4 py-2 rounded-xl hover:bg-white hover:text-violet-800 hover:border hover:border-gray-300 ">
             <UserCircle width={20} height={20} />
             <span>Portfolio</span>
           </Link>

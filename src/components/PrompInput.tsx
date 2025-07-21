@@ -112,7 +112,7 @@ export default function PromptInput({
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && onSend()}
         placeholder="Posez une question à l'IA..."
-        className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none"
+        className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none text-gray-950"
       />
       {isTyping ? (
         <button
